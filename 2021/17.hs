@@ -1,0 +1,2 @@
+sol :: Int
+sol = length $ filter id [(\(_,_,x,y) -> x >= 153 && y <= -75 && x <= 199 && y >= -114) . last . takeWhile (\(_,_,x,y) -> x <= 199 && y >= -114) . iterate (\(h,v,x,y) -> (max (h-1) 0, v-1, x+h, y+v)) $ (h,v,0,0) | h <- [17..199], v <- [-114..113]]
